@@ -3364,7 +3364,7 @@ class PlayState extends MusicBeatState
 			return;
 		}
 		try {
-			peuText = new FlxText(-200, 35, 0, "Psych Engine Ultra");
+			peuText = new FlxText(-200, 35, 0, "Friggin Mouse Plus!");
 			peuText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, LEFT, OUTLINE, FlxColor.BLACK);
 			peuText.borderSize = 2;
 			peuText.cameras = [camHUD];

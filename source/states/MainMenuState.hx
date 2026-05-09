@@ -42,8 +42,6 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'freeplay',
 		'changelog',
-		#if MODS_ALLOWED 'mods', #end
-		#if ACHIEVEMENTS_ALLOWED 'achievements', #end
 		'credits',
 		'settings'
 	];
@@ -212,6 +210,7 @@ class MainMenuState extends MusicBeatState
 			Language.getPhrase('news_3', 'The weekly tournament has started! Don\'t forget to join.'),
 			Language.getPhrase('news_4', 'Don\'t forget to join our Discord server'),
 			Language.getPhrase('news_5', 'Let\'s Gooo!')
+			Language.getPhrase('news_6', 'FRIGGIN Gooo!')
 		];
 	}
 
@@ -588,7 +587,7 @@ class MainMenuState extends MusicBeatState
 		add(bottomLine);
 		
 		versionText = new FlxText(FlxG.width - 300, FlxG.height - 45, 280,
-			Language.getPhrase('main_menu_version', 'Psych Engine Ultra') + " " + psychEngineVersion, 16);
+			Language.getPhrase('main_menu_version', 'Friggin Mouse Plus!') + " " + psychEngineVersion, 16);
 		versionText.setFormat(Paths.font("vcr.ttf"), 16, 0xFF888888, RIGHT);
 		add(versionText);
 		versionText.visible = ClientPrefs.data.showVersionText;
