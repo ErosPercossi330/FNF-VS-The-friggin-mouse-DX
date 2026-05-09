@@ -1,0 +1,41 @@
+package jaxe;
+
+enum JaxeExpr {
+	EPackage(pack:String);
+	EImport(pack:String);
+	EScriptImport(pathExpr:JaxeExpr);
+	EUsing(pack:String);
+	EScriptUsing(pathExpr:JaxeExpr);
+	EClass(name:String, superclass:String, interfaces:Array<String>, typeParams:Array<String>, members:Array<JaxeExpr>);
+	EEnum(name:String, fields:Array<String>);
+	EMethod(name:String, type:String, args:Array<{name:String, type:String}>, body:JaxeExpr, isOverride:Bool, isStatic:Bool);
+	EVarDecl(name:String, type:String, init:JaxeExpr, isPrivate:Bool, isStatic:Bool);
+	EFunction(args:Array<{name:String, type:String}>, body:JaxeExpr);
+	EBlock(exprs:Array<JaxeExpr>);
+	EIf(cond:JaxeExpr, e1:JaxeExpr, e2:JaxeExpr);
+	EWhile(cond:JaxeExpr, body:JaxeExpr);
+	EFor(init:JaxeExpr, cond:JaxeExpr, inc:JaxeExpr, body:JaxeExpr);
+	EForEach(varName:String, iterable:JaxeExpr, body:JaxeExpr);
+	ESwitch(cond:JaxeExpr, cases:Array<{val:JaxeExpr, body:Array<JaxeExpr>}>, defaultBody:Array<JaxeExpr>);
+	ETry(tryBlock:JaxeExpr, catchVar:String, catchBlock:JaxeExpr);
+	EBreak;
+	EContinue;
+	EReturn(expr:JaxeExpr);
+	EArrayDecl(exprs:Array<JaxeExpr>);
+	EArrayAccess(target:JaxeExpr, index:JaxeExpr);
+	ENew(cls:String, typeParams:Array<String>, args:Array<JaxeExpr>);
+	ENewArray(cls:String, size:JaxeExpr);
+	EPostfix(expr:JaxeExpr, op:String);
+	EUnop(op:String, expr:JaxeExpr);
+	ECall(target:JaxeExpr, args:Array<JaxeExpr>);
+	EField(target:JaxeExpr, field:String);
+	EIdent(name:String);
+	EString(s:String, interpolate:Bool);
+	EInt(i:Int);
+	EFloat(f:Float);
+	EBool(b:Bool);
+	EAssign(target:JaxeExpr, val:JaxeExpr);
+	EBinop(op:String, e1:JaxeExpr, e2:JaxeExpr);
+	EThis;
+	ESuper;
+}
